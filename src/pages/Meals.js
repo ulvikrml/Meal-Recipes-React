@@ -1,42 +1,44 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import MealForm from '../components/MealForm';
-import RecipeListItem from  '../components/RecipeListItem';
+import RecipeListItem from '../components/RecipeListItem';
 
 const Meals = () => {
     const [recipes, setRecipes] = useState([]);
     const [error, setError] = useState(false);
 
-    const getRecipe = async(e) =>{
+    const getRecipe = async (e) => {
         setRecipes([]);
         setError(false);
         e.preventDefault();
         const recipeName = e.target.elements.recipeName.value;
         console.log(recipeName);
-        try{
+        try {
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`);
             // const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${recipeName}`);
             const data = await response.json();
-            if(response.ok && data.meals !== null){
+            if (response.ok && data.meals !== null) {
                 console.log(data);
                 setRecipes(data.meals);
             }
-            else{
+            else {
                 throw new Error('Invalid recipe name!');
             }
         }
-        catch(err){ 
+        catch (err) {
             console.log(err.message);
             setError(err.message)
         }
     }
     return (
-        <div>
+        <div className='meals-container'>
             <div className="container">
                 <MealForm getRecipe={getRecipe}></MealForm>
                 {error ? error : ''}
-                {recipes ? recipes.map(recipe=>{
-                    return <RecipeListItem key={recipe.idMeal} data={recipe}></RecipeListItem>
-                }) : ''}
+                <div className="recipe-list">
+                    {recipes?.length>0 ? recipes.map(recipe => {
+                        return <RecipeListItem key={recipe.idMeal} data={recipe}></RecipeListItem>
+                    }) : <p className='recipe-list-empty-text'>There is not any recipe yet...</p> }
+                </div>
             </div>
         </div>
     )

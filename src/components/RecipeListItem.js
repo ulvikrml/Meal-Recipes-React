@@ -1,14 +1,17 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const MealListItem = ({data}) => {
+const MealListItem = ({ data }) => {
+  console.log(data);
   return (
-    <div>
+    <Link className='recipe-list-item' to={`/meals/recipe/${data.idMeal}`}>
+      <div>
+        <img className='recipe-image' src={data.strMealThumb} alt="recipeImage" />
+        <h3 className='recipe-name'>
         {data.strMeal}
-        <Link to={`/meals/recipe/${data.idMeal}`}>View Recips</Link>
-        {/* {data.strCategory} */} 
-        {/* state={{ recipe: recipe.strMeal }} */}
-    </div>
+        </h3>
+      </div>
+    </Link>
   )
 }
 

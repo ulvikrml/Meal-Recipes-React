@@ -30,12 +30,18 @@ const RecipeCard = () => {
     localStorage.setItem('recipe', JSON.stringify({...recipe}));
   }
   console.log(recipe);
+  const {strMealThumb, strMeal, strArea, strCategory, strTags} = recipe
   return (
     <div className="container">
       <div className='recipe-card'>
-        <p>{recipe?.strMeal}</p>
-        <p> {recipe?.strCategory}</p>
-        <p>{recipe?.strArea}</p>
+        <img className='recipe-image' src={strMealThumb} alt="mealImage" />
+        <p className='recipe-name'>{strMeal}</p>
+        <ul>
+          <li>Category: {strCategory}</li>
+          <li>Area: {strArea}</li>
+          <li>tags: {strTags}</li>
+        </ul>
+        <button className='save-btn'>save</button>
         <p>{error ? error : ''}</p>
         <button onClick={addToSave} style={{width: '100px'}}>Save to List</button>
       </div>

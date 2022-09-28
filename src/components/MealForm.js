@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const MealForm = (props) => {
+  const [value, setValue] = useState('')
   return (
     <div>
-        <form onSubmit={props.getRecipe}>
-            <input className='recipe-input' name='recipeName' type="text"/>
-            <button className="form-btn">Search</button>
+        <form className='search-recipe-form' onSubmit={props.getRecipe}>
+            <input value={value} onChange={e => setValue(e.target.value)} className='recipe-input' name='recipeName' type="text"/>
+            <button disabled={!value} className="form-btn">Search</button>
         </form>
     </div>
   )
