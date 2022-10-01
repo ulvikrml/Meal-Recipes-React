@@ -1,0 +1,20 @@
+.meals-container {
+  margin-top: 40px;
+}
+.meals-container .recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: 100%;
+  gap: 15px;
+}
+.meals-container .added-text {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.meals-container .added-text .recipe-list-text {
+  color: white;
+}
+.meals-container .added-text .err-text {
+  color: rgb(180, 58, 58);
+}/*# sourceMappingURL=Meals.css.map */

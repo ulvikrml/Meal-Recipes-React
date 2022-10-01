@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/RecipeListItem/RecipeListItem.css'
 
 const MealListItem = ({ data }) => {
   console.log(data);

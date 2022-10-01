@@ -1,0 +1,32 @@
+.search-recipe-form {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.search-recipe-form .recipe-input {
+  height: 100%;
+  background: #313235;
+  width: 400px;
+  border: none;
+  outline: none;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  padding-left: 20px;
+  font-size: 18px;
+  color: white;
+}
+.search-recipe-form .recipe-input:focus {
+  border: 2px solid #E85D04;
+}
+.search-recipe-form .form-btn {
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background: #686a6e;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: 600;
+}/*# sourceMappingURL=MealForm.css.map */
