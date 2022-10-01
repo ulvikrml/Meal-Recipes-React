@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mirza:wght@400;500;600;700&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,100&display=swap');
 
 * {
   box-sizing: border-box;
@@ -145,8 +146,8 @@ nav .nav-logo{
 }
 .recipe-card ul li::before{
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #E85D04;
   list-style: none;
@@ -162,8 +163,18 @@ nav .nav-logo{
   border: none;
   width: min-content;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-
+.save-btn span{
+  padding-left: 7px;
+}
+.ingredients-measures{
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
 
 
 .recipe-list{
@@ -193,12 +204,63 @@ nav .nav-logo{
   text-align: center;
 }
 .recipe-list-empty-text{
-  font-size: 18px;
   color: white;
 }
+.meals-container .added-text{
+  font-size: 18px;
+  margin-top: 10px;
+}
+.meals-container .added-text .err-text{
+  color: rgb(180, 58, 58);
+}
 
-
-
+.saved-meals{
+  margin-top: 60px;
+}
+.saved-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  margin-top: 14px;
+}
+.saved-list-title{
+  font-size: 35px;
+  color: #9F9F97;
+  font-family: 'Mirza', cursive;
+}
+.saved-list-item{
+  width: 32%;
+  background: #393B40;
+  border-radius: 5px;
+  padding: 17px;
+  padding-bottom: 35px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+.saved-list-item-title{
+  font-size: 17px;
+  color: #9F9F97;
+}
+.saved-list ul{
+  margin-top: 10px;
+}
+.saved-list ul li{
+  list-style: none;
+  font-size: 15px;
+  color: #686B6C;
+  margin-top: 3px;
+}
+.saved-list ul li::before{
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E85D04;
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
 
 
 @media screen and (min-width: 1400px) {

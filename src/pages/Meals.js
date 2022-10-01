@@ -29,15 +29,20 @@ const Meals = () => {
             setError(err.message)
         }
     }
+    const errorText = error && <p className='err-text'>{error}</p>;
+    const emptyListText = (!(recipes?.length>0) && !error) ? <p className='recipe-list-empty-text'>There is not any recipe yet...</p> : ''
     return (
         <div className='meals-container'>
             <div className="container">
                 <MealForm getRecipe={getRecipe}></MealForm>
-                {error ? error : ''}
+                <div className="added-text">
+                    {errorText}
+                    {emptyListText}
+                </div>
                 <div className="recipe-list">
                     {recipes?.length>0 ? recipes.map(recipe => {
                         return <RecipeListItem key={recipe.idMeal} data={recipe}></RecipeListItem>
-                    }) : <p className='recipe-list-empty-text'>There is not any recipe yet...</p> }
+                    }) :  ''}
                 </div>
             </div>
         </div>
