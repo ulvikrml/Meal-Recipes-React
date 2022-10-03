@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { FaHeart, FaHeartBroken, FaBackward } from "react-icons/fa";
 import '../styles/RecipeCard/RecipeCard.css'
+import RecipeIngrediens from './RecipeIngredients';
 
 const RecipeCard = () => {
   const [error, setError] = useState([]);
@@ -58,16 +59,6 @@ const RecipeCard = () => {
   }
   console.log(savedList);
 
-  const ingredients = Object.keys(recipe).filter((key) => key.startsWith('strIngredient')).filter((key) => recipe[key] !== null && recipe[key])
-
-  const ingredientsWithMeasures = ingredients.map((item, index) => (
-    {
-      id: index + 1,
-      ingredient: recipe[item],
-      measure: recipe[`strMeasure${index + 1}`]
-    }
-  ));
-
   const instruction = `${recipe.strInstructions}`;
   const instructionArr = instruction.split('.');
 
@@ -83,25 +74,12 @@ const RecipeCard = () => {
               <ul className='recipe-card-header-text__list'>
                 <li className='recipe-card-header-text__list__item'>Category: {strCategory}</li>
                 <li className='recipe-card-header-text__list__item'>Area: {strArea}</li>
-                {strTags ? <li>tags: {strTags}</li> : ``}
+                {strTags ? <li className='recipe-card-header-text__list__item'>tags: {strTags}</li> : ``}
               </ul>
               <button onClick={addToSave} className='recipe-card-header__save-btn'>{isInSavedList ? <FaHeartBroken /> : <FaHeart />} <span>{isInSavedList ? 'remove' : 'save'} </span></button>
             </div>
           </div>
-          <div className="recipe-card-ingredients">
-            <p className='recipe-card-ingredients__title'>Ingredients</p>
-            <ul className='recipe-card-ingredients__measures-list'>
-              {
-                ingredientsWithMeasures.map((item) => {
-                  return <li className='recipe-card-ingredients__measures-list__item' key={item.id}>
-                    <p>{item.ingredient}</p>
-                    <p>{item.measure}</p>
-                  </li>
-                }
-                )}
-            </ul>
-          </div>
-
+          <RecipeIngrediens data={recipe}></RecipeIngrediens>
           <div className="recipe-card-instructions">
             <p className='recipe-card-instructions__title'>Instructions</p>
             <ul className='recipe-card-instructions__list'>
