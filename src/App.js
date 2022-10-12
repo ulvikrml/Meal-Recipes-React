@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Meals from "./pages/Meals";
 import SavedMeals from './pages/SavedMeals';
 import RecipeCard from './components/RecipeCard';
+import './styles/Responsive/Responsive.css'
 
 function App() {
   return (

@@ -36,7 +36,6 @@ const RecipeCard = () => {
     setSavedList(list);
   }, [id]);
 
-
   const addToSave = () => {
     let updatedSavedList = savedList
     if (updatedSavedList == null) {
@@ -57,7 +56,6 @@ const RecipeCard = () => {
     localStorage.setItem('recipe', JSON.stringify(updatedSavedList));
     setSavedList(updatedSavedList);
   }
-  console.log(savedList);
 
   const instruction = `${recipe.strInstructions}`;
   const instructionArr = instruction.split('.');

@@ -1,0 +1,52 @@
+.saved-meals {
+  margin-top: 60px;
+}
+.saved-meals .container .saved-list-title {
+  font-size: 35px;
+  color: #9F9F97;
+  font-family: "Mirza", cursive;
+}
+.saved-meals .container .saved-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  margin-top: 14px;
+}
+.saved-meals .container .saved-list .saved-list-item {
+  width: 32%;
+  background: #393B40;
+  border-radius: 5px;
+  padding: 17px;
+  padding-bottom: 35px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+.saved-meals .container .saved-list .saved-list-item .saved-list-item-title {
+  font-size: 17px;
+  color: #9F9F97;
+}
+.saved-meals .container .saved-list .saved-list-item ul {
+  margin-top: 10px;
+}
+.saved-meals .container .saved-list .saved-list-item ul li {
+  list-style: none;
+  font-size: 15px;
+  color: #686B6C;
+  margin-top: 3px;
+}
+.saved-meals .container .saved-list .saved-list-item ul li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E85D04;
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+.saved-meals .container .saved-list .empty-list-text {
+  font-size: 18px;
+  color: #E85D04;
+  margin-top: 7px;
+}/*# sourceMappingURL=SavedMeals.css.map */

@@ -1,0 +1,44 @@
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 940px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    width: 720px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95% !important;
+  }
+  .hero-section .container .hero-section-container {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .hero-section .container .hero-section-container .hero-section-info {
+    width: 100%;
+  }
+  .hero-section .container .hero-section-container .hero-section-info .hero-section-title {
+    font-size: 44px;
+  }
+  .hero-section .container .hero-section-container .hero-section-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 512px) {
+  .hero-section .container .hero-section-container .hero-section-info .hero-section-title {
+    font-size: 36px;
+    padding-top: 25px;
+  }
+}
+@media screen and (max-width: 424px) {
+  .hero-section .container .hero-section-container .hero-section-info .hero-section-title {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=Responsive.css.map */

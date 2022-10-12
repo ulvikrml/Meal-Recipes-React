@@ -1,11 +1,10 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
-const RecipeIngrediens = ({data}) => {
+const RecipeIngrediens = ({ data }) => {
   const [items, setItems] = useState([]);
-  useEffect(()=>{
+
+  useEffect(() => {
     const ingredients = Object.keys(data).filter((key) => key.startsWith('strIngredient')).filter((key) => data[key] !== null && data[key])
-    console.log(data);
-    console.log(ingredients);
     const ingredientsWithMeasures = ingredients.map((item, index) => (
       {
         id: index + 1,
@@ -14,21 +13,22 @@ const RecipeIngrediens = ({data}) => {
       }
     ));
     setItems(ingredientsWithMeasures);
-  },[data])
+  }, [data])
+  
   return (
     <div className="recipe-card-ingredients">
-            <p className='recipe-card-ingredients__title'>Ingredients</p>
-            <ul className='recipe-card-ingredients__measures-list'>
-              {
-                items.map((item) => {
-                  return <li className='recipe-card-ingredients__measures-list__item' key={item.id}>
-                    <p>{item.ingredient}</p>
-                    <p>{item.measure}</p>
-                  </li>
-                }
-                )}
-            </ul>
-          </div>
+      <p className='recipe-card-ingredients__title'>Ingredients</p>
+      <ul className='recipe-card-ingredients__measures-list'>
+        {
+          items.map((item) => {
+            return <li className='recipe-card-ingredients__measures-list__item' key={item.id}>
+              <p>{item.ingredient}</p>
+              <p>{item.measure}</p>
+            </li>
+          }
+          )}
+      </ul>
+    </div>
   )
 }
 

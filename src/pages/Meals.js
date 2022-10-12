@@ -36,7 +36,6 @@ const Meals = () => {
     }
 
     let content = <p className='recipe-list-text'>There is not any recipe yet...</p>;
-
     if (recipes.length > 0) {
         content = <div className="recipe-list">
             {recipes?.length > 0 ? recipes.map(recipe => {
