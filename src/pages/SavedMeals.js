@@ -8,9 +8,7 @@ const SavedMeals = () => {
     const data = JSON.parse(localStorage.getItem('recipe'));
     if (data) { setList(data) }
   }, []);
-
-  console.log(list.idMeal);
-  console.log([list]);
+  
   return (
     <div className="saved-meals">
       <div className="container">

@@ -39,13 +39,14 @@ const RecipeCard = () => {
   const addToSave = () => {
     let updatedSavedList = savedList
     if (updatedSavedList == null) {
-      localStorage.setItem('recipe', JSON.stringify([recipe]))
+      console.log(recipe);
+      localStorage.setItem('recipe', JSON.stringify(recipe))
     }
     else {
       if (updatedSavedList.find(item => item.idMeal === recipe.idMeal)) {
         setIsInSavedList(false);
         updatedSavedList = updatedSavedList.filter(e => e.idMeal !== recipe.idMeal)
-        console.log('del-item');
+        console.log('del-item'); 
       }
       else {
         setIsInSavedList(true);
