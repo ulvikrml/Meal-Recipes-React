@@ -40,7 +40,7 @@ const RecipeCard = () => {
     let updatedSavedList = savedList
     if (updatedSavedList == null) {
       console.log(recipe);
-      localStorage.setItem('recipe', JSON.stringify(recipe))
+      updatedSavedList = [recipe];
     }
     else {
       if (updatedSavedList.find(item => item.idMeal === recipe.idMeal)) {
@@ -50,6 +50,7 @@ const RecipeCard = () => {
       }
       else {
         setIsInSavedList(true);
+        console.log(savedList);
         updatedSavedList = [...savedList, recipe];
         console.log('add-item');
       }
