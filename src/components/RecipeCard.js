@@ -41,6 +41,7 @@ const RecipeCard = () => {
     if (updatedSavedList == null) {
       console.log(recipe);
       updatedSavedList = [recipe];
+      setIsInSavedList(true);
     }
     else {
       if (updatedSavedList.find(item => item.idMeal === recipe.idMeal)) {
