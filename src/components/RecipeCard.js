@@ -5,7 +5,7 @@ import '../styles/RecipeCard/RecipeCard.css'
 import RecipeIngrediens from './RecipeIngredients';
 
 const RecipeCard = () => {
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(false);
   const [recipe, setRecipe] = useState([]);
   const [savedList, setSavedList] = useState();
   const [isInSavedList, setIsInSavedList] = useState(false);
@@ -22,6 +22,7 @@ const RecipeCard = () => {
           setRecipe(data.meals[0]);
           const isActive = list.find(item => item.idMeal === data.meals[0].idMeal)
           setIsInSavedList(isActive);
+          setError(false)
         }
         else {
           throw new Error('Something went wrong!');
@@ -35,7 +36,7 @@ const RecipeCard = () => {
     const list = JSON.parse(localStorage.getItem('recipe'));
     setSavedList(list);
   }, [id]);
-
+console.log(error);
   const addToSave = () => {
     let updatedSavedList = savedList
     if (updatedSavedList == null) {
@@ -61,8 +62,7 @@ const RecipeCard = () => {
   }
 
   const instruction = `${recipe.strInstructions}`;
-  const instructionArr = instruction.split('.');
-
+  const instructionArr = instruction.split('.').slice(0, -1)
   const { strMealThumb, strMeal, strArea, strCategory, strTags } = recipe;
   return (
     <div className='recipe-card'>
@@ -91,7 +91,7 @@ const RecipeCard = () => {
           </div>
         </div>
           : ''}
-        {error ? <div className='recipe-card-error-text-container'>
+        {error && error === 'Something went wrong!' ? <div className='recipe-card-error-text-container'>
           <p className='error-text'>{error}</p>
           <Link className='go-back-link' to='/meals'><span>Go Back</span>  <FaBackward /></Link>
         </div> : ''}

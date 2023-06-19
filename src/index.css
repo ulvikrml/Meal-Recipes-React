@@ -37,6 +37,9 @@ body {
   .container {
       width: 85% !important;
     }
+    .recipe-card-ingredients__measures-list__item{
+      width: 100% !important;
+    }
 }
 @media screen and (max-width: 512px) {
     nav {
@@ -45,12 +48,10 @@ body {
               flex-direction: column;
               align-items: flex-start !important;
               justify-content: center;
-              .nav-logo{
-                margin-left: 25px;
-              }
               .nav-links{
                 .nav-link{
-                  margin-left: 25px !important;
+                  margin-right: 20px !important;
+                  margin-left: 0px !important;
                 }
               }
           }
@@ -60,14 +61,8 @@ body {
       .recipe-card-header-text{
         margin-left: 0px !important;
       }
-      /* .recipe-image {
-        width: 80% !important;
-    } */
-      .recipe-card-ingredients__measures-list__item{
-        width: 100% !important;
-      }
       .recipe-card-header{
-        flex-direction: column;
+        flex-direction: column !important;
       }
     }
 }
