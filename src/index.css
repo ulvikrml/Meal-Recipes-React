@@ -40,6 +40,9 @@ body {
     .recipe-card-ingredients__measures-list__item{
       width: 100% !important;
     }
+    .saved-list-item {
+      width: 48% !important;
+    }
 }
 @media screen and (max-width: 512px) {
     nav {
